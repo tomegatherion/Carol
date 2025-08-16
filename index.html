@@ -7,58 +7,72 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Feliz Aniversário de Namoro</h1>
-        </header>
-        <section id="first-meeting">
-            <h2>Nosso Primeiro Encontro</h2>
-            <p id="first-meeting-text"></p>
-        </section>
-        <section id="photo-carousel-1">
-            <h2>Nossas Memórias</h2>
-            <div class="carousel">
-                <button class="carousel-button prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</button>
-                <div class="carousel-container" id="carousel1">
-                    <!-- Imagens serão inseridas aqui pelo JavaScript -->
-                </div>
-                <button class="carousel-button next" onclick="moveSlide(1, 'carousel1')">&#10095;</button>
-            </div>
-        </section>
-        <section id="shakespeare-quote">
-            <h2>Uma Frase Especial</h2>
-            <blockquote id="shakespeare-quote-text"></blockquote>
-        </section>
-        <section id="differences">
-            <h2>Nossas Diferenças</h2>
-            <div class="differences-container">
-                <p id="difference-text"></p>
-                <button id="next-difference">Próxima</button>
-            </div>
-        </section>
-        <section id="photo-carousel-2">
-            <h2>Mais Memórias</h2>
-            <div class="carousel">
-                <button class="carousel-button prev" onclick="moveSlide(-1, 'carousel2')">&#10094;</button>
-                <div class="carousel-container" id="carousel2">
-                    <!-- Imagens serão inseridas aqui pelo JavaScript -->
-                </div>
-                <button class="carousel-button next" onclick="moveSlide(1, 'carousel2')">&#10095;</button>
-            </div>
-        </section>
-        <section id="testimonial">
-            <h2>Meu Depoimento</h2>
-            <div class="testimonial-letter">
-                <p id="testimonial-text"></p>
-            </div>
-        </section>
-        <section id="photo-gallery">
-            <h2>Galeria de Fotos</h2>
-            <div class="gallery" id="photo-gallery-container">
-                <!-- Imagens serão inseridas aqui pelo JavaScript -->
-            </div>
-        </section>
+    <div id="loading-screen">
+        <div class="heart-animation">
+            <div class="heart"></div>
+        </div>
+        <div class="loading-text">Feliz Aniversário de Namoro</div>
     </div>
+    
+    <div id="main-content" style="display: none;">
+        <div class="container">
+            <header>
+                <h1>Feliz Aniversário de Namoro</h1>
+            </header>
+            <section id="first-meeting">
+                <h2>Nosso Primeiro Encontro</h2>
+                <p id="first-meeting-text"></p>
+            </section>
+            <section id="photo-carousel-1">
+                <h2>Nossas Memórias</h2>
+                <div class="carousel">
+                    <button class="carousel-button prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</button>
+                    <div class="carousel-container" id="carousel1">
+                        <!-- Imagens serão inseridas aqui pelo JavaScript -->
+                    </div>
+                    <button class="carousel-button next" onclick="moveSlide(1, 'carousel1')">&#10095;</button>
+                </div>
+            </section>
+            <section id="shakespeare-quote">
+                <h2>Uma Frase Especial</h2>
+                <blockquote id="shakespeare-quote-text"></blockquote>
+            </section>
+            <section id="differences">
+                <h2>Nossas Diferenças</h2>
+                <div class="differences-container">
+                    <p id="difference-text"></p>
+                    <button id="next-difference">Próxima</button>
+                </div>
+            </section>
+            <section id="photo-carousel-2">
+                <h2>Mais Memórias</h2>
+                <div class="carousel">
+                    <button class="carousel-button prev" onclick="moveSlide(-1, 'carousel2')">&#10094;</button>
+                    <div class="carousel-container" id="carousel2">
+                        <!-- Imagens serão inseridas aqui pelo JavaScript -->
+                    </div>
+                    <button class="carousel-button next" onclick="moveSlide(1, 'carousel2')">&#10095;</button>
+                </div>
+            </section>
+            <section id="testimonial">
+                <h2>Meu Depoimento</h2>
+                <div class="testimonial-letter">
+                    <p id="testimonial-text"></p>
+                </div>
+            </section>
+            <section id="photo-gallery">
+                <h2>Galeria de Fotos</h2>
+                <div class="gallery" id="photo-gallery-container">
+                    <!-- Imagens serão inseridas aqui pelo JavaScript -->
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div id="rose-rain" style="display: none;">
+        <!-- Rosas serão geradas aqui pelo JavaScript -->
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

@@ -107,6 +107,76 @@ const photoCaptions = [
 
 // Função para carregar o texto do primeiro encontro
 document.addEventListener('DOMContentLoaded', function() {
+    // Iniciar a chuva de rosas imediatamente, mas escondida
+    startRoseRain();
+    
+    // Mostrar tela de carregamento por 4 segundos
+    setTimeout(function() {
+        // Iniciar a transição
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.classList.add('fade-out');
+        
+        // Após a transição da tela de carregamento, mostrar o conteúdo principal
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('main-content').classList.add('fade-in');
+            
+            // Inicializar o conteúdo da página principal
+            initializeMainContent();
+        }, 1000); // Tempo da animação de fade out
+    }, 4000); // 4 segundos de tela de carregamento
+});
+
+// Função para iniciar a chuva de rosas
+function startRoseRain() {
+    const roseRain = document.getElementById('rose-rain');
+    roseRain.style.display = 'block';
+    
+    // Criar muitas rosas no início
+    for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+            createRose();
+        }, i * 30); // Criar uma rosa a cada 30ms para mais rosas no início
+    }
+    
+    // Continuar criando rosas por mais 5 segundos
+    for (let i = 100; i < 300; i++) {
+        setTimeout(() => {
+            createRose();
+        }, (i - 100) * 100 + 3000); // Depois de 3 segundos, criar mais rosas
+    }
+}
+
+// Função para criar uma rosa
+function createRose() {
+    const roseRain = document.getElementById('rose-rain');
+    const rose = document.createElement('div');
+    rose.innerHTML = '🌹';
+    rose.classList.add('rose');
+    
+    // Posição aleatória horizontal
+    const left = Math.random() * 100;
+    rose.style.left = `${left}vw`;
+    
+    // Tamanho aleatório
+    const size = Math.random() * 20 + 10;
+    rose.style.fontSize = `${size}px`;
+    
+    // Duração aleatória da animação
+    const duration = Math.random() * 3 + 2;
+    rose.style.animationDuration = `${duration}s`;
+    
+    roseRain.appendChild(rose);
+    
+    // Remover a rosa após a animação
+    setTimeout(() => {
+        rose.remove();
+    }, duration * 1000);
+}
+
+// Função para inicializar o conteúdo principal
+function initializeMainContent() {
     document.getElementById('first-meeting-text').textContent = firstMeetingText;
     document.getElementById('shakespeare-quote-text').innerHTML = shakespeareQuote;
     document.getElementById('testimonial-text').textContent = testimonialText;
@@ -127,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar galeria
     initializeGallery();
-});
+}
 
 // Função para inicializar carrossel
 function initializeCarousel(carouselId, count) {
