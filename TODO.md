@@ -3,10 +3,17 @@
 ## Visão Geral
 Criar uma página web interativa e romântica para celebrar o aniversário do relacionamento, incluindo memórias, depoimentos e uma surpresa especial com animações.
 
-## Estrutura de Pastas
-- [x] Pasta `Fotos` - já existe
-- [x] Pasta `Fatos` - para fatos sobre a história
-- [x] Pasta `Meus Depoimentos` - para depoimentos pessoais
+## Estrutura de pastas e arquivos
+### Pasta Fotos
+- Contem as fotos a serem utilizadas
+
+### Pasta Frases
+- Contem as frases para legendas de fotos
+
+### Pasta Meus Depoimentos
+- Contem Depoimento.md que é algo que escrevi para ela
+- Contem Gostos.md que fala um pouco sobre nossas diferenças
+- Contem Primeiro encontro.md que fala um pouco sobre nossas diferenças.
 
 
 ## Funcionalidades Planejadas
