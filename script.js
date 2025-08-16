@@ -17,12 +17,12 @@ const shakespeareQuote = `"Se por te beijar tivesse que ir depois para o inferno
 — William Shakespeare`;
 
 const differences = [
-    "1 - Nossos gostos musicais são diferentes, existe uma coerência nos gêneros que você escuta, eu sou mais caótico.",
-    "2 - Eu sou uma pessoa matutina, ela vespertina.",
-    "3 - Definitivamente não concordamos com a quantidade de sal na cozinha.",
-    "4 - Você é uma social, adora estar rodeada de pessoas, em eventos, festas. Eu também gosto, principalmente se puder chegar atrasado e sair mais cedo. Acho que é o meu jeito de me proteger um pouco da multidão, mas com você sempre me sinto à vontade.",
-    "5 - Você se sente feliz em seguir tradições e celebrar datas com rituais familiares. Eu respeito, mas prefiro analisar se tudo isso faz sentido, talvez criar nossa própria forma de celebrar. Lembro que no início eu achava que você era exagerada com as datas, mas agora entendo que é sua forma de mostrar amor, e isso me toca profundamente.",
-    "6 - Sobre filmes e séries, você gosta de histórias com finais felizes e personagens cativantes. Eu gosto de tramas complexas, coisas que me fazem pensar sobre o mundo e sobre o futuro, dilemas, ficção, ou onde o certo e o errado se tornam confusos. Lembro de uma vez que assistimos um filme, você chorou no final e eu tinha achado o final óbvio, mas depois vi que as suas lágrimas não se tratava de lógica, e sim emoção, e isso me fez amar ainda mais essa sua sensibilidade."
+    "Nossos gostos musicais são diferentes, existe uma coerência nos gêneros que você escuta, eu sou mais caótico.",
+    "Eu sou uma pessoa matutina, ela vespertina.",
+    "Definitivamente não concordamos com a quantidade de sal na cozinha.",
+    "Você é uma social, adora estar rodeada de pessoas, em eventos, festas. Eu também gosto, principalmente se puder chegar atrasado e sair mais cedo. Acho que é o meu jeito de me proteger um pouco da multidão, mas com você sempre me sinto à vontade.",
+    "Você se sente feliz em seguir tradições e celebrar datas com rituais familiares. Eu respeito, mas prefiro analisar se tudo isso faz sentido, talvez criar nossa própria forma de celebrar. Lembro que no início eu achava que você era exagerada com as datas, mas agora entendo que é sua forma de mostrar amor, e isso me toca profundamente.",
+    "Sobre filmes e séries, você gosta de histórias com finais felizes e personagens cativantes. Eu gosto de tramas complexas, coisas que me fazem pensar sobre o mundo e sobre o futuro, dilemas, ficção, ou onde o certo e o errado se tornam confusos. Lembro de uma vez que assistimos um filme, você chorou no final e eu tinha achado o final óbvio, mas depois vi que as suas lágrimas não se tratava de lógica, e sim emoção, e isso me fez amar ainda mais essa sua sensibilidade."
 ];
 
 const testimonialText = `O amor não foi uma escolha, foi uma revelação.
@@ -162,7 +162,8 @@ function moveSlide(direction, carouselId) {
 function initializeGallery() {
     const gallery = document.getElementById('photo-gallery-container');
     // Usar fotos de 20 em diante (já usamos 0-19 nos carrosséis)
-    for (let i = 20; i < 68; i++) { // Ajustado para usar todas as fotos restantes
+    // Ajustado para parar na última foto existente (IMG-20250815-WA0227.jpg que é a foto 59)
+    for (let i = 20; i < 59; i++) { 
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
         
