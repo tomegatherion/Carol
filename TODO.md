@@ -8,32 +8,30 @@ Criar uma página web interativa e romântica para celebrar o aniversário do re
 - [x] Pasta `Fatos` - para fatos sobre a história
 - [x] Pasta `Meus Depoimentos` - para depoimentos pessoais
 - [x] Pasta `Depoimentos` - para mensagens de amigos e familiares
-- [ ] Pasta `mapa` - para arquivos do mapa interativo (futuro)
 
 ## Funcionalidades Planejadas
 
 ### 1. Página Inicial Romântica
 - [ ] Criar layout inicial com tema romântico
 - [ ] Incluir mensagem inicial "Feliz Aniversário de Namoro"
+- [ ] Incluir história do primeiro encontro.
+- [ ] Incluir 1 carrossel com 10 fotos da mesma proporção
+- [ ] Exibir nossos gostos, de forma que apareça 1 por 1 em uma especia de carrossel
+- [ ] Incluir 1 carrossel com 10 fotos da mesma proporção (não repetir fotos)
+
 
 ### 2. Galeria de Fotos
 - [ ] Criar seção para exibir fotos em grade ou carrossel
-- [ ] Adicionar legendas às fotos importantes
 - [ ] Implementar navegação intuitiva entre as fotos
+- [ ] Agrupar fotos por proporções, de modo que tudo fique consistente.
 
-### 3. Linha do Tempo dos Fatos Marcantes
-- [ ] Criar linha do tempo interativa
-- [ ] Adicionar eventos importantes com datas e descrições
-- [ ] Incluir fotos relacionadas a cada evento
+### 3. 
 
 ### 4. Depoimentos Pessoais
 - [ ] Criar seção para seus depoimentos (`Meus Depoimentos`)
 - [ ] Estilizar depoimentos com cards ou caixas especiais
 
-### 5. Depoimentos de Amigos e Familiares
-- [ ] Criar seção para depoimentos externos
-- [ ] Organizar em formato de grade ou lista
-- [ ] Adicionar avatares ou fotos dos colaboradores (se disponível)
+
 
 ### 6. Modo Surpresa com Chuva de Pétalas
 - [ ] Criar função para ocultar conteúdo da página inicialmente
