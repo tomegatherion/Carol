@@ -579,6 +579,63 @@ section h2:after {
     }
 }
 
+/* Depoimento e coração */
+.testimonial-content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    color: #5a5a5a;
+    text-align: center;
+    line-height: 1.8;
+    display: none;
+}
+
+.testimonial-content.visible {
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+.testimonial-text-container h3 {
+    color: #c71585;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.testimonial-signature {
+    margin-top: 30px;
+    font-style: italic;
+    color: #c71585;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.heart-overlay-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 105, 180, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: inset 0 0 50px rgba(139, 0, 0, 0.5);
+}
+
+.heart-symbol {
+    font-size: 100px;
+    animation: heartbeat 1.5s infinite;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+}
+
 /* Para tablets e telas maiores */
 @media (min-width: 768px) and (max-width: 1024px) {
     .container {
@@ -607,6 +664,31 @@ section h2:after {
     
     .gallery {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .letter-envelope {
+        height: 350px;
+    }
+    
+    .envelope {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .envelope-flap {
+        border-left: 125px solid transparent;
+        border-right: 125px solid transparent;
+        border-bottom: 75px solid #ff69b4;
+    }
+    
+    .envelope-back {
+        width: 250px;
+        height: 125px;
+    }
+    
+    .letter {
+        width: 230px;
+        height: 170px;
     }
 }
 
@@ -638,5 +720,30 @@ section h2:after {
     
     .gallery {
         grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .letter-envelope {
+        height: 400px;
+    }
+    
+    .envelope {
+        width: 300px;
+        height: 180px;
+    }
+    
+    .envelope-flap {
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-bottom: 90px solid #ff69b4;
+    }
+    
+    .envelope-back {
+        width: 300px;
+        height: 150px;
+    }
+    
+    .letter {
+        width: 270px;
+        height: 200px;
     }
 }

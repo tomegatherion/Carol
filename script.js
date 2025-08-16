@@ -157,6 +157,89 @@ function startRoseRain() {
     }, 300); // Criar uma rosa a cada 300ms
 }
 
+// Função para inicializar a interatividade do depoimento
+function initializeTestimonial() {
+    const testimonialContent = document.getElementById('testimonial-content');
+    const heartOverlay = document.getElementById('heart-overlay-full');
+    const clickInstruction = document.getElementById('click-instruction');
+    const flowerExplosionContainer = document.getElementById('flower-explosion-container');
+    
+    // Ocultar o conteúdo inicialmente
+    testimonialContent.style.display = 'none';
+    
+    let clickCount = 0;
+    const requiredClicks = 12;
+    
+    heartOverlay.addEventListener('click', function(e) {
+        e.stopPropagation();
+        clickCount++;
+        
+        if (clickCount < requiredClicks) {
+            // Animar o coração a cada clique
+            heartOverlay.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                heartOverlay.style.transform = 'scale(1)';
+            }, 200);
+            
+            // Atualizar instrução
+            clickInstruction.textContent = `Clique mais ${requiredClicks - clickCount} vezes no coração`;
+        } else if (clickCount === requiredClicks) {
+            // Explodir o coração e mostrar o conteúdo
+            heartOverlay.classList.add('exploding');
+            
+            // Remover o overlay e mostrar o conteúdo
+            setTimeout(() => {
+                heartOverlay.style.display = 'none';
+                testimonialContent.style.display = 'block';
+                testimonialContent.classList.add('visible');
+            }, 500);
+            
+            // Após a explosão, mostrar explosão de flores
+            setTimeout(() => {
+                showFlowerExplosion();
+            }, 300);
+        }
+    });
+}
+
+// Função para mostrar explosão de flores
+function showFlowerExplosion() {
+    const flowerExplosionContainer = document.getElementById('flower-explosion-container');
+    flowerExplosionContainer.style.display = 'block';
+    
+    // Criar flores explodindo
+    const flowers = ['🌸', '🌹', '🌺', '🌻', '🌷', '💐', '💐', '🪷', '🏵️', '💖'];
+    
+    for (let i = 0; i < 150; i++) {
+        setTimeout(() => {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+            
+            // Posição aleatória para a explosão
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 100 + Math.random() * 300;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            
+            flower.style.setProperty('--tx', `${tx}px`);
+            flower.style.setProperty('--ty', `${ty}px`);
+            
+            flowerExplosionContainer.appendChild(flower);
+            
+            // Remover a flor após a animação
+            setTimeout(() => {
+                flower.remove();
+            }, 1000);
+        }, i * 20);
+    }
+    
+    // Esconder o container de explosão após as animações
+    setTimeout(() => {
+        flowerExplosionContainer.style.display = 'none';
+    }, 3000);
+}
+
 // Função para criar uma rosa
 function createRose() {
     const roseRain = document.getElementById('rose-rain');
@@ -218,6 +301,9 @@ function initializeMainContent() {
         currentDifference = (currentDifference + 1) % differences.length;
         differenceElement.textContent = differences[currentDifference];
     });
+    
+    // Inicializar interatividade do depoimento
+    initializeTestimonial();
     
     // Inicializar galeria
     initializeGallery();
