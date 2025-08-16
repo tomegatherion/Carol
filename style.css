@@ -20,7 +20,6 @@ body {
     height: 100%;
     background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -30,32 +29,26 @@ body {
     position: relative;
     width: 100px;
     height: 100px;
-    margin-bottom: 80px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .heart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
     width: 100px;
     height: 100px;
-    background: #ff1493;
+    background: #ff6b9c;
+    position: relative;
+    transform: rotate(-45deg);
     animation: heartbeat 1.5s infinite;
-    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ffb6c1;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
 }
 
 .heart:before,
 .heart:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100px;
     height: 100px;
-    background: #ff1493;
+    background: #ff6b9c;
     border-radius: 50%;
-    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ffb6c1;
 }
 
 .heart:before {
@@ -64,8 +57,8 @@ body {
 }
 
 .heart:after {
-    top: 0;
     left: 50px;
+    top: 0;
 }
 
 @keyframes heartbeat {
@@ -460,6 +453,105 @@ section h2:after {
     opacity: 0.5;
 }
 
+/* Meu Depoimento */
+#testimonial .testimonial-text-container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 240, 245, 0.9));
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #ffb6c1;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.1);
+    font-family: 'Georgia', serif;
+    font-size: 1.1em;
+    line-height: 1.8;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#testimonial .testimonial-text-container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23ffb6c1" stroke-width="0.5" opacity="0.3"/></svg>');
+    opacity: 0.5;
+}
+
+#testimonial .testimonial-text-container h3 {
+    color: #c71585;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#testimonial .testimonial-signature {
+    margin-top: 30px;
+    font-style: italic;
+    color: #c71585;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: right;
+}
+
+.heart-reveal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.heart-static {
+    width: 100px;
+    height: 100px;
+    background: #ff6b9c;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: heartbeat 1.5s infinite;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+}
+
+.heart-static:before,
+.heart-static:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #ff6b9c;
+    border-radius: 50%;
+}
+
+.heart-static:before {
+    top: -50px;
+    left: 0;
+}
+
+.heart-static:after {
+    left: 50px;
+    top: 0;
+}
+
+.heart-click-area {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.click-instruction {
+    margin-top: 30px;
+    font-size: 1em;
+    color: #c71585;
+    font-style: italic;
+    animation: pulse 2s infinite;
+    font-weight: bold;
+    text-align: center;
+}
+
 /* Galeria de Fotos */
 .gallery {
     display: grid;
@@ -600,7 +692,7 @@ section h2:after {
 .testimonial-text-container h3 {
     color: #c71585;
     font-size: 1.4em;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-weight: bold;
 }
 
@@ -612,28 +704,101 @@ section h2:after {
     font-size: 1.1em;
 }
 
-.heart-overlay-full {
+.heart-section {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 105, 180, 0.9);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    transition: opacity 0.5s ease;
-    cursor: pointer;
     z-index: 10;
-    box-shadow: inset 0 0 50px rgba(139, 0, 0, 0.5);
+    padding-top: 200px;
 }
 
-.heart-symbol {
-    font-size: 100px;
+.heart-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-main-pulse {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #ff6b9c;
+    transform: rotate(-45deg);
     animation: heartbeat 1.5s infinite;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+}
+
+.heart-main-pulse:before,
+.heart-main-pulse:after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #ff6b9c;
+    border-radius: 50%;
+}
+
+.heart-main-pulse:before {
+    top: -60px;
+    left: 0;
+}
+
+.heart-main-pulse:after {
+    left: 60px;
+    top: 0;
+}
+
+.heart-click-area {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.heart-explode {
+    animation: explode 1.5s forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: rotate(-45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-45deg) scale(20);
+        opacity: 0;
+    }
+}
+
+.click-instruction {
+    position: absolute;
+    top: 320px;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: #c71585;
+    font-style: italic;
+    animation: pulse 2s infinite;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Para tablets e telas maiores */

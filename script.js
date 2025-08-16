@@ -160,9 +160,10 @@ function startRoseRain() {
 // Função para inicializar a interatividade do depoimento
 function initializeTestimonial() {
     const testimonialContent = document.getElementById('testimonial-content');
-    const heartOverlay = document.getElementById('heart-overlay-full');
+    const heartReveal = document.getElementById('heart-reveal');
+    const heartStatic = document.getElementById('heart-static');
+    const heartClickArea = document.getElementById('heart-click-area');
     const clickInstruction = document.getElementById('click-instruction');
-    const flowerExplosionContainer = document.getElementById('flower-explosion-container');
     
     // Ocultar o conteúdo inicialmente
     testimonialContent.style.display = 'none';
@@ -170,34 +171,23 @@ function initializeTestimonial() {
     let clickCount = 0;
     const requiredClicks = 12;
     
-    heartOverlay.addEventListener('click', function(e) {
+    heartClickArea.addEventListener('click', function(e) {
         e.stopPropagation();
         clickCount++;
         
         if (clickCount < requiredClicks) {
             // Animar o coração a cada clique
-            heartOverlay.style.transform = 'scale(1.1)';
+            heartStatic.style.animation = 'none';
             setTimeout(() => {
-                heartOverlay.style.transform = 'scale(1)';
-            }, 200);
+                heartStatic.style.animation = '';
+            }, 10);
             
             // Atualizar instrução
-            clickInstruction.textContent = `Clique mais ${requiredClicks - clickCount} vezes no coração`;
+            clickInstruction.textContent = `Clique mais ${requiredClicks - clickCount} vezes`;
         } else if (clickCount === requiredClicks) {
-            // Explodir o coração e mostrar o conteúdo
-            heartOverlay.classList.add('exploding');
-            
-            // Remover o overlay e mostrar o conteúdo
-            setTimeout(() => {
-                heartOverlay.style.display = 'none';
-                testimonialContent.style.display = 'block';
-                testimonialContent.classList.add('visible');
-            }, 500);
-            
-            // Após a explosão, mostrar explosão de flores
-            setTimeout(() => {
-                showFlowerExplosion();
-            }, 300);
+            // Mostrar o conteúdo e ocultar o coração
+            heartReveal.style.display = 'none';
+            testimonialContent.style.display = 'block';
         }
     });
 }
@@ -207,10 +197,11 @@ function showFlowerExplosion() {
     const flowerExplosionContainer = document.getElementById('flower-explosion-container');
     flowerExplosionContainer.style.display = 'block';
     
-    // Criar flores explodindo
-    const flowers = ['🌸', '🌹', '🌺', '🌻', '🌷', '💐', '💐', '🪷', '🏵️', '💖'];
+    // Criar muitas flores explodindo
+    const flowers = ['🌸', '🌹', '🌺', '🌻', '🌷', '💐', '💐', '🪷', '🏵️', '💖', '💮', '🏵️', '🌹', '🌸'];
     
-    for (let i = 0; i < 150; i++) {
+    // Criar 500 flores para cobrir completamente a tela
+    for (let i = 0; i < 500; i++) {
         setTimeout(() => {
             const flower = document.createElement('div');
             flower.classList.add('flower');
@@ -218,20 +209,24 @@ function showFlowerExplosion() {
             
             // Posição aleatória para a explosão
             const angle = Math.random() * Math.PI * 2;
-            const distance = 100 + Math.random() * 300;
+            const distance = 50 + Math.random() * 400;
             const tx = Math.cos(angle) * distance;
             const ty = Math.sin(angle) * distance;
             
             flower.style.setProperty('--tx', `${tx}px`);
             flower.style.setProperty('--ty', `${ty}px`);
             
+            // Tamanhos variados de flores
+            const size = 20 + Math.random() * 30;
+            flower.style.fontSize = `${size}px`;
+            
             flowerExplosionContainer.appendChild(flower);
             
             // Remover a flor após a animação
             setTimeout(() => {
                 flower.remove();
-            }, 1000);
-        }, i * 20);
+            }, 1500);
+        }, i * 5); // Criar flores mais rapidamente
     }
     
     // Esconder o container de explosão após as animações
@@ -327,6 +322,11 @@ function initializeCarousel(carouselId, count) {
     // Inicializar posição do carrossel
     carousel.style.transform = 'translateX(0)';
     carousel.currentSlide = 0;
+    
+    // Configurar transição automática a cada 5 segundos
+    setInterval(() => {
+        moveSlide(1, carouselId);
+    }, 5000);
 }
 
 // Função para mover slides do carrossel
