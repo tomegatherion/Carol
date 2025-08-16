@@ -1,6 +1,6 @@
 O amor não foi uma escolha, foi uma revelação.
 
-Antes de você, eu pensava que o amor era uma construção, algo que a gente planejava, como um projeto. Mas você chegou, com seu perfume inesquecível e sua risada contagiante, e mostrou que o amor é uma força da natureza, algo que simplesmente acontece, te envolve, te transforma.
+Antes de você, eu pensava que o amor era uma algo que se constrói como se fosse algo se quisesse, algo que a gente planejava, como um projeto. Mas você chegou, com seu perfume inesquecível e sua risada contagiante, e mostrou que o amor é uma força da natureza, algo que simplesmente acontece, te envolve, te transforma.
 
 Você me ensinou que estar nervoso na sua presença não é fraqueza, é a certeza de que o que sinto é real. Você me mostrou que não preciso ensaiar palavras para te impressionar, porque é a minha verdade que te conquista, mesmo que eu tropece nas minhas próprias intenções.
 
