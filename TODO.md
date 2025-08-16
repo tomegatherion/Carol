@@ -7,48 +7,22 @@ Criar uma página web interativa e romântica para celebrar o aniversário do re
 - [x] Pasta `Fotos` - já existe
 - [x] Pasta `Fatos` - para fatos sobre a história
 - [x] Pasta `Meus Depoimentos` - para depoimentos pessoais
-- [x] Pasta `Depoimentos` - para mensagens de amigos e familiares
+
 
 ## Funcionalidades Planejadas
 
 ### 1. Página Inicial Romântica
 - [ ] Criar layout inicial com tema romântico
-- [ ] Incluir mensagem inicial "Feliz Aniversário de Namoro"
+- [ ] O celular dela é um iPhone 15 pro max, quero que o site seja feito sob medida para a tela do telefone, para nao ter problema que quebras.
+- [ ] Incluir mensagem inicial "Feliz Aniversário de Namoro" estilizada bonita e romântica.
 - [ ] Incluir história do primeiro encontro.
 - [ ] Incluir 1 carrossel com 10 fotos da mesma proporção
-- [ ] Exibir nossos gostos, de forma que apareça 1 por 1 em uma especia de carrossel
+- [ ] Exibir nossos gostos, de forma que apareça 1 por 1 em uma especie de carrossel
 - [ ] Incluir 1 carrossel com 10 fotos da mesma proporção (não repetir fotos)
+- [ ] Incluir a mensagem do depoimento em um papel estivo carta, antigo, algo que soe romântico.
+- [ ] Inclua o restante das fotos em uma galeria de fotos, utilize um formato divertido e que combine com a página.
+- [ ] Para cada foto haverá 1 frase junto na pasta Frases.
 
-
-### 2. Galeria de Fotos
-- [ ] Criar seção para exibir fotos em grade ou carrossel
-- [ ] Implementar navegação intuitiva entre as fotos
-- [ ] Agrupar fotos por proporções, de modo que tudo fique consistente.
-
-### 3. 
-
-### 4. Depoimentos Pessoais
-- [ ] Criar seção para seus depoimentos (`Meus Depoimentos`)
-- [ ] Estilizar depoimentos com cards ou caixas especiais
-
-
-
-### 6. Modo Surpresa com Chuva de Pétalas
-- [ ] Criar função para ocultar conteúdo da página inicialmente
-- [ ] Mostrar apenas mensagem "Feliz Aniversário de Namoro"
-- [ ] Adicionar botão de surpresa
-- [ ] Implementar animação de chuva de pétalas ao clicar no botão
-- [ ] Após a animação, revelar todo o conteúdo da página
-
-### 7. Design Responsivo
-- [ ] Garantir compatibilidade com dispositivos móveis para todas as funcionalidades
-- [ ] Testar layouts em diferentes tamanhos de tela
-- [ ] Ajustar fontes e elementos para melhor visualização em mobile
-
-### 8. Personalização Final
-- [ ] Escolher paleta de cores romântica (tons de rosa, roxo, dourado)
-- [ ] Adicionar transições suaves entre seções
-- [ ] Revisar e otimizar performance da página
 
 ## Observações
 - Priorizar a experiência do usuário para que seja emocionante e fácil de navegar.
