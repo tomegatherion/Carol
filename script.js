@@ -110,20 +110,49 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iniciar a chuva de rosas imediatamente, mas escondida
     startRoseRain();
     
+    // Acelerar o coração durante 4 segundos antes da transição
+    const heartElement = document.querySelector('.heart');
+    let speed = 1.5; // Velocidade inicial em segundos
+    const endSpeed = 0.4; // Velocidade final em segundos (4x mais rápido)
+    const steps = 20; // Número de passos para acelerar
+    const intervalTime = (4000 / steps); // Intervalo entre cada aceleração
+    
+    const accelerationInterval = setInterval(() => {
+        speed = speed - (1.1 / steps); // Acelerar gradualmente
+        if (speed < endSpeed) {
+            speed = endSpeed;
+        }
+        
+        // Aplicar a nova velocidade
+        heartElement.style.animation = `heartbeat ${speed}s infinite ease-in-out`;
+        
+        // Adicionar classe para velocidade máxima
+        if (speed <= endSpeed) {
+            heartElement.classList.add('heart-accelerate');
+        }
+    }, intervalTime);
+    
     // Mostrar tela de carregamento por 4 segundos
     setTimeout(function() {
+        // Parar a aceleração
+        clearInterval(accelerationInterval);
+        
         // Iniciar a transição
         const loadingScreen = document.getElementById('loading-screen');
         loadingScreen.classList.add('fade-out');
         
-        // Após a transição da tela de carregamento, mostrar o conteúdo principal
+        // Após a transição da tela de carregamento, mostrar as rosas caindo
         setTimeout(function() {
             loadingScreen.style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            document.getElementById('main-content').classList.add('fade-in');
             
-            // Inicializar o conteúdo da página principal
-            initializeMainContent();
+            // Mostrar as rosas caindo por 1,5 segundos antes do conteúdo principal
+            setTimeout(function() {
+                document.getElementById('main-content').style.display = 'block';
+                document.getElementById('main-content').classList.add('fade-in');
+                
+                // Inicializar o conteúdo da página principal
+                initializeMainContent();
+            }, 1500); // 1,5 segundos de rosas caindo
         }, 1000); // Tempo da animação de fade out
     }, 4000); // 4 segundos de tela de carregamento
 });
@@ -176,10 +205,10 @@ function initializeTestimonial() {
         clickCount++;
         
         if (clickCount < requiredClicks) {
-            // Animar o coração a cada clique
+            // Animar o coração a cada clique com uma animação mais suave
             heartStatic.style.animation = 'none';
             setTimeout(() => {
-                heartStatic.style.animation = '';
+                heartStatic.style.animation = 'heartbeat 2s infinite ease-in-out';
             }, 10);
             
             // Atualizar instrução
