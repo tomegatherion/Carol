@@ -134,18 +134,27 @@ function startRoseRain() {
     roseRain.style.display = 'block';
     
     // Criar muitas rosas no início
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 200; i++) {
         setTimeout(() => {
             createRose();
-        }, i * 30); // Criar uma rosa a cada 30ms para mais rosas no início
+        }, i * 15); // Criar uma rosa a cada 15ms para muitas rosas no início
     }
     
-    // Continuar criando rosas por mais 5 segundos
-    for (let i = 100; i < 300; i++) {
-        setTimeout(() => {
-            createRose();
-        }, (i - 100) * 100 + 3000); // Depois de 3 segundos, criar mais rosas
-    }
+    // Continuar criando rosas para sempre, mas em ritmo mais lento
+    let roseCount = 200;
+    setInterval(() => {
+        createRose();
+        roseCount++;
+        
+        // Limpar rosas antigas para não sobrecarregar o DOM
+        if (roseCount > 500) {
+            const roses = document.querySelectorAll('.rose');
+            if (roses.length > 300) {
+                roses[0].remove();
+                roseCount--;
+            }
+        }
+    }, 300); // Criar uma rosa a cada 300ms
 }
 
 // Função para criar uma rosa
@@ -177,13 +186,28 @@ function createRose() {
 
 // Função para inicializar o conteúdo principal
 function initializeMainContent() {
-    document.getElementById('first-meeting-text').textContent = firstMeetingText;
-    document.getElementById('shakespeare-quote-text').innerHTML = shakespeareQuote;
-    document.getElementById('testimonial-text').textContent = testimonialText;
+    // Dividir textos longos em parágrafos
+    const firstMeetingElement = document.getElementById('first-meeting-text');
+    const firstMeetingParagraphs = firstMeetingText.split('\n\n');
+    firstMeetingParagraphs.forEach(paragraph => {
+        const p = document.createElement('p');
+        p.textContent = paragraph;
+        firstMeetingElement.appendChild(p);
+    });
     
-    // Inicializar carrosséis
-    initializeCarousel('carousel1', 10);
+    document.getElementById('shakespeare-quote-text').innerHTML = shakespeareQuote;
+    
+    const testimonialElement = document.getElementById('testimonial-text');
+    const testimonialParagraphs = testimonialText.split('\n\n');
+    testimonialParagraphs.forEach(paragraph => {
+        const p = document.createElement('p');
+        p.textContent = paragraph;
+        testimonialElement.appendChild(p);
+    });
+    
+    // Inicializar carrosséis (trocados de posição)
     initializeCarousel('carousel2', 10);
+    initializeCarousel('carousel1', 10);
     
     // Inicializar diferenças
     let currentDifference = 0;
