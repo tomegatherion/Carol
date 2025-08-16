@@ -1,4 +1,4 @@
-O amor não foi um escolha, foi uma revelação.
+O amor não foi uma escolha, foi uma revelação.
 
 Antes de você, eu pensava que o amor era uma construção, algo que a gente planejava, como um projeto. Mas você chegou, com seu perfume inesquecível e sua risada contagiante, e mostrou que o amor é uma força da natureza, algo que simplesmente acontece, te envolve, te transforma.
 
@@ -13,4 +13,4 @@ Eu te escolhi para ser minha eternidade, meu hoje e todos os meus futuros.
 
 E pensar que tudo começou com um simples "oi" em uma tela, e hoje você é o motivo do meu sorriso matinal e da minha última lembrança antes de dormir. Que as manhãs continuem nos trazendo motivos para rir, e que os desafios que vierem apenas nos fortaleçam. Porque com você, até o comum se torna extraordinário.
 
-Você é a razão pela qual acredito que o melhor ainda está por vir, e é com você que quero viver todos as histórias que a vida nos fara escrever.
+Você é a razão pela qual acredito que o melhor ainda está por vir, e é com você que quero viver todas as histórias que a vida nos fará escrever.
