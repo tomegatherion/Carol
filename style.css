@@ -3,11 +3,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+    background: linear-gradient(135deg, #fff0f5, #ffe4e1, #f5e6eb);
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    background-attachment: fixed;
 }
 
 /* Tela de carregamento */
@@ -41,8 +42,9 @@ body {
     transform: translate(-50%, -50%) rotate(-45deg);
     width: 100px;
     height: 100px;
-    background: #d45c74;
+    background: #ff1493;
     animation: heartbeat 1.5s infinite;
+    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ffb6c1;
 }
 
 .heart:before,
@@ -51,8 +53,9 @@ body {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: #d45c74;
+    background: #ff1493;
     border-radius: 50%;
+    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ffb6c1;
 }
 
 .heart:before {
@@ -79,12 +82,15 @@ body {
 
 .loading-text {
     font-size: 2em;
-    color: #d45c74;
+    color: #c71585;
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     animation: fadeInOut 3s infinite;
     width: 100%;
     margin-top: 20px;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 @keyframes fadeInOut {
@@ -107,6 +113,60 @@ body {
     z-index: 10;
 }
 
+/* Para telas maiores, manter o mesmo layout centralizado */
+@media (min-width: 431px) {
+    .container {
+        max-width: 430px; /* Manter o mesmo tamanho máximo */
+        padding: 20px;
+    }
+}
+
+/* Para telas menores (como iPhone SE ou dispositivos com telas menores) */
+@media (max-width: 400px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    #intro-message, section {
+        padding: 20px;
+    }
+    
+    .letter-container {
+        font-size: 1em;
+    }
+    
+    section h2 {
+        font-size: 1.4em;
+    }
+    
+    .loading-text {
+        font-size: 1.5em;
+    }
+    
+    .heart-animation {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 60px;
+    }
+    
+    .heart, .heart:before, .heart:after {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .heart:before {
+        top: -40px;
+    }
+    
+    .heart:after {
+        left: 40px;
+    }
+}
+
 header {
     text-align: center;
     margin-bottom: 30px;
@@ -115,11 +175,12 @@ header {
 
 header h1 {
     font-size: 2.2em;
-    color: #d45c74;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: #c71585; /* Rosa mais vivo */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     font-family: 'Georgia', serif;
     position: relative;
     display: inline-block;
+    animation: colorChange 8s infinite alternate;
 }
 
 header h1:after {
@@ -130,20 +191,40 @@ header h1:after {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(to right, transparent, #d45c74, transparent);
+    background: linear-gradient(to right, transparent, #c71585, transparent);
+}
+
+/* Animação de mudança de cor suave */
+@keyframes colorChange {
+    0% {
+        color: #c71585; /* Rosa médio */
+    }
+    25% {
+        color: #ff1493; /* Rosa mais forte */
+    }
+    50% {
+        color: #db7093; /* Rosa pálido */
+    }
+    75% {
+        color: #ff69b4; /* Rosa forte */
+    }
+    100% {
+        color: #c71585; /* Rosa médio */
+    }
 }
 
 /* Mensagem de introdução */
 #intro-message {
     margin-bottom: 40px;
     padding: 25px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border: 1px solid #f8c6d0;
+    border: 1px solid #ffb6c1;
     position: relative;
     overflow: hidden;
     animation: slideUp 0.8s ease-out;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 240, 245, 0.9));
 }
 
 #intro-message:before {
@@ -153,7 +234,7 @@ header h1:after {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(to right, #d45c74, #f8c6d0);
+    background: linear-gradient(to right, #ff69b4, #ffb6c1, #ff69b4);
 }
 
 .letter-container {
@@ -178,13 +259,20 @@ header h1:after {
 section {
     margin-bottom: 40px;
     padding: 25px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border: 1px solid #f8c6d0;
+    border: 1px solid #ffb6c1;
     position: relative;
     overflow: hidden;
     animation: slideUp 0.8s ease-out;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 240, 245, 0.9));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 section:before {
@@ -194,16 +282,26 @@ section:before {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(to right, #d45c74, #f8c6d0);
+    background: linear-gradient(to right, #ff69b4, #ffb6c1, #ff69b4);
 }
 
 section h2 {
-    color: #d45c74;
-    border-bottom: 2px solid #f8c6d0;
+    color: #c71585;
+    border-bottom: 2px solid #ffb6c1;
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-family: 'Georgia', serif;
     font-size: 1.6em;
+    text-align: center;
+    position: relative;
+}
+
+section h2:after {
+    content: '❦';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #c71585;
 }
 
 /* Carrossel */
@@ -266,10 +364,31 @@ section h2 {
     font-style: italic;
     font-size: 1.2em;
     text-align: center;
-    color: #5a5a5a;
-    border-left: 4px solid #d45c74;
-    padding-left: 20px;
+    color: #8b008b;
+    border-left: 4px solid #c71585;
+    border-right: 4px solid #c71585;
+    padding: 15px 20px;
     margin: 20px 0;
+    background: rgba(255, 240, 245, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+#shakespeare-quote blockquote:before, 
+#shakespeare-quote blockquote:after {
+    content: '"';
+    font-size: 2em;
+    color: #c71585;
+    opacity: 0.7;
+}
+
+#shakespeare-quote blockquote:before {
+    margin-right: 5px;
+}
+
+#shakespeare-quote blockquote:after {
+    margin-left: 5px;
 }
 
 /* Diferenças */
@@ -283,33 +402,62 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 240, 245, 0.7), rgba(255, 255, 255, 0.7));
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border: 1px solid #ffb6c1;
 }
 
 #next-difference {
-    background: #d45c74;
+    background: linear-gradient(135deg, #ff69b4, #c71585);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 1em;
     margin-top: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 #next-difference:hover {
-    background: #c04a60;
+    background: linear-gradient(135deg, #c71585, #ff69b4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#next-difference:active {
+    transform: translateY(0);
 }
 
 /* Depoimento */
 .testimonial-letter {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    background: linear-gradient(135deg, #fff0f5, #f8f8ff);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #ffb6c1;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.1);
     font-family: 'Georgia', serif;
     font-size: 1.1em;
     line-height: 1.8;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-letter:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23ffb6c1" stroke-width="0.5" opacity="0.3"/></svg>');
+    opacity: 0.5;
 }
 
 /* Galeria de Fotos */
@@ -317,6 +465,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    margin-top: 20px;
 }
 
 .gallery-item {
@@ -325,16 +474,26 @@ section h2 {
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     position: relative;
     cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-color: #ff69b4;
 }
 
 .gallery-item img {
     width: 100%;
     display: block;
     transition: transform 0.3s ease;
+    filter: brightness(0.95);
 }
 
 .gallery-item:hover img {
     transform: scale(1.05);
+    filter: brightness(1);
 }
 
 .gallery-item .caption {
@@ -342,12 +501,14 @@ section h2 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(199, 21, 133, 0.85);
     color: white;
     padding: 10px;
     font-size: 0.9em;
     opacity: 0;
     transition: opacity 0.3s ease;
+    text-align: center;
+    font-style: italic;
 }
 
 .gallery-item:hover .caption {
@@ -418,29 +579,64 @@ section h2 {
     }
 }
 
-/* Responsividade */
-@media (max-width: 480px) {
+/* Para tablets e telas maiores */
+@media (min-width: 768px) and (max-width: 1024px) {
     .container {
-        padding: 15px;
+        max-width: 90%;
     }
     
     header h1 {
-        font-size: 1.8em;
+        font-size: 2.5em;
     }
     
-    section {
-        padding: 15px;
+    #intro-message, section {
+        padding: 30px;
     }
     
     section h2 {
-        font-size: 1.4em;
+        font-size: 1.8em;
+    }
+    
+    .letter-container {
+        font-size: 1.2em;
     }
     
     .testimonial-letter {
-        font-size: 1em;
+        font-size: 1.2em;
     }
     
-    .loading-text {
-        font-size: 1.5em;
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Para telas grandes (desktop) */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 800px;
+    }
+    
+    header h1 {
+        font-size: 2.8em;
+    }
+    
+    #intro-message, section {
+        padding: 35px;
+    }
+    
+    section h2 {
+        font-size: 2em;
+    }
+    
+    .letter-container {
+        font-size: 1.3em;
+    }
+    
+    .testimonial-letter {
+        font-size: 1.3em;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

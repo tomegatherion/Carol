@@ -101,7 +101,7 @@ const photoCaptions = [
     "A vida é uma flor da qual o amor é o mel. — Victor Hugo",
     "Seja qual for a substância de que nossas almas são feitas, a dele e a minha são iguais. — Emily Brontë",
     "O amor é um desejo irresistível de ser irresistivelmente desejado. — Robert Frost",
-    "O amor é o filho da ilusão e o pai da desilusão. — Langston Hughes",
+    "O amor verdadeiro não se encontra, se constrói com paciência, carinho e respeito. — Autor desconhecido",
     "O amor é um mistério infinito, porque aquele que o cria nunca o entende, e aquele que o sente nunca o explica. — Octavio Paz"
 ];
 
